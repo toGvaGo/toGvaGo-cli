@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const yargs = require('yargs');
+const { inquirerPrompt } = require('./inquirer');
 
 yargs.command(
   ['create', 'c'],
@@ -14,6 +15,8 @@ yargs.command(
     });
   },
   function (argv) {
-    console.log('argv', argv);
+    inquirerPrompt(argv).then(answers => {
+      console.log(answers);
+    });
   }
 ).argv;

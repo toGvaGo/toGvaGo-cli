@@ -13,6 +13,7 @@
     "mortal": "./bin/index.js"
   },
   "dependencies": {
+    "inquirer": "^12.3.0",
     "yargs": "^17.7.2"
   }
 }

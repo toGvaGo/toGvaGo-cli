@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 
-console.log(inquirer);
+
 const prompt = inquirer.createPromptModule();
 function inquirerPrompt(argv) {
   const { name } = argv;

@@ -13,6 +13,7 @@
     "mortal": "./bin/index.js"
   },
   "dependencies": {
+    "copy-dir": "^1.3.0",
     "inquirer": "^12.3.0",
     "yargs": "^17.7.2"
   }

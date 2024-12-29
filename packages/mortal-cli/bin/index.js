@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const yargs = require('yargs');
-const { inquirerPrompt } = require('./inquirer');
+const { inquirerPrompt, install } = require('./inquirer');
 
 const path = require('path');
 const { copyDir, checkMkdirExists, copyFile, copyTemplate } = require('./copy');
@@ -64,6 +64,8 @@ yargs.command(
             name
           }
         );
+        //安装依赖
+        install(process.cwd(), answers);
       }
     });
   }

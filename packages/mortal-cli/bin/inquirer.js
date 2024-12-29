@@ -1,5 +1,7 @@
 const inquirer = require('inquirer');
-
+const path = require('path');
+const { exec } = require('child_process');
+// const ora = require('ora');
 
 const prompt = inquirer.createPromptModule();
 function inquirerPrompt(argv) {
@@ -82,4 +84,36 @@ function inquirerPrompt(argv) {
   });
 }
 
+// 自动安装依赖
+const LibraryMap = {
+  'Ant Design': 'antd',
+  iView: 'view-ui-plus',
+  'Ant Design Vue': 'ant-design-vue',
+  Element: 'element-plus'
+};
+
+function install(cmdPath, options) {
+  const { frame, library } = options;
+  const command = `pnpm add ${frame} && pnpm add ${LibraryMap[library]}`;
+  return new Promise(async (resolve, reject) => {
+    const oraModule = await import('ora');
+    const ora = oraModule.default; // 获取 ora 函
+    console.log(ora);
+    const spinner = ora();
+    spinner.start();
+    spinner.start(`依赖安装中，请稍等...`);
+
+    exec(command, { cwd: path.resolve(cmdPath) }, error => {
+      if (error) {
+        reject();
+        spinner.fail(`依赖安装失败`);
+        return;
+      }
+      spinner.succeed(`依赖安装成功`);
+      resolve();
+    });
+  });
+}
+
 exports.inquirerPrompt = inquirerPrompt;
+exports.install = install;

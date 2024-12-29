@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mortal-cli": "workspace:*"
+    "antd": "^5.22.7",
+    "mortal-cli": "workspace:*",
+    "react": "^19.0.0"
   }
 }

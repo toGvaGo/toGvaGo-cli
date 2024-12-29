@@ -4,7 +4,7 @@ const yargs = require('yargs');
 const { inquirerPrompt } = require('./inquirer');
 
 const path = require('path');
-const { copyDir, checkMkdirExists } = require('./copy');
+const { copyDir, checkMkdirExists, copyFile, copyTemplate } = require('./copy');
 
 yargs.command(
   ['create', 'c'],
@@ -48,8 +48,17 @@ yargs.command(
       if (isMkdirExists) {
         console.log(`${name}文件已存在`);
       } else {
-        copyFile(
-          path.resolve(__dirname, `./template/${type}/index.js`),
+        //静态文件
+        // copyFile(
+        //   path.resolve(__dirname, `./template/${type}/index.js`),
+        //   path.resolve(process.cwd(), `./src/pages/${name}/index.js`),
+        //   {
+        //     name
+        //   }
+        // );
+        //动态文件
+        copyTemplate(
+          path.resolve(__dirname, `./template/${type}/index.tpl`),
           path.resolve(process.cwd(), `./src/pages/${name}/index.js`),
           {
             name

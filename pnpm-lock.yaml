@@ -22,6 +22,9 @@ importers:
       inquirer:
         specifier: ^12.3.0
         version: 12.3.0(@types/node@22.10.2)
+      mustache:
+        specifier: ^4.2.0
+        version: 4.2.0
       yargs:
         specifier: ^17.7.2
         version: 17.7.2
@@ -172,6 +175,10 @@ packages:
   is-fullwidth-code-point@3.0.0:
     resolution: {integrity: sha512-zymm5+u+sCsSWyD9qNaejV3DFvhCKclKdizYaJUuHA83RLjb7nSuGnddCHGv0hk+KY7BMAlsWeK4Ueg6EV6XQg==}
     engines: {node: '>=8'}
+
+  mustache@4.2.0:
+    resolution: {integrity: sha512-71ippSywq5Yb7/tVYyGbkBggbU8H3u5Rz56fH60jGFgr8uHwxs+aSKeqmluIVzM0m0kB7xQjKS6qPfd0b2ZoqQ==}
+    hasBin: true
 
   mute-stream@2.0.0:
     resolution: {integrity: sha512-WWdIxpyjEn+FhQJQQv9aQAYlHoNVdzIzUySNV1gHUPDSdZJ3yZn7pAAbQcV7B56Mvu881q9FZV+0Vx2xC44VWA==}
@@ -413,6 +420,8 @@ snapshots:
       rxjs: 7.8.1
 
   is-fullwidth-code-point@3.0.0: {}
+
+  mustache@4.2.0: {}
 
   mute-stream@2.0.0: {}
 

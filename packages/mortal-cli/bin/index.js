@@ -1,3 +1,4 @@
 #!/usr/bin/env node
+const yargs = require('yargs');
 
-console.log('Welcome to Mortal World');
+console.log('name', yargs.argv.name);

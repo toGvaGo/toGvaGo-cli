@@ -11,5 +11,8 @@
   "license": "ISC",
   "bin": {
     "mortal": "./bin/index.js"
+  },
+  "dependencies": {
+    "yargs": "^17.7.2"
   }
 }

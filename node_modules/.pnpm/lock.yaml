@@ -1,0 +1,17 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .: {}
+
+  examples/app:
+    dependencies:
+      mortal-cli:
+        specifier: workspace:*
+        version: link:../../packages/mortal-cli
+
+  packages/mortal-cli: {}
